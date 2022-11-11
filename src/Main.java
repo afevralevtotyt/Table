@@ -29,8 +29,8 @@ public class Main {
             }
         }}
 
-        Set <StringBuilder> set = new HashSet<>();
-        set=Set.copyOf(numList);
+        Set <StringBuilder> set = Set.copyOf(numList);
+
         Iterator iter = set.iterator();
 
         for (int i=0; i<15; i++){
