@@ -2,13 +2,14 @@ import java.util.*;
 
 public class Main {
 
-    public static void addToDatabase(Passport passport, HashMap map) {
+    public static void addToDatabase(Passport passport, Map<Integer, Passport> map) {
         map.put(passport.getNumber(), passport);
     }
 
-    public static Passport databaseSearch(int nubmer, HashMap map) {
+    public static Passport databaseSearch(int nubmer, Map<Integer, Passport> map) {
         return (Passport) map.get(nubmer);
     }
+
 
     public static void main(String[] args) {
 
@@ -55,12 +56,13 @@ public class Main {
 
         Passport ivanFedorov = new Passport(12345, "Иван", "Федоров", "Михайлович", "20.12.2000");
         Passport sergeyIvanov = new Passport(32146, "Сергей", "Иванов", "06.12.1988");
-
+        Passport ivanPetrov = new Passport(32146, "Иван", "Петров", "12.12.1912");
 
         HashMap<Integer, Passport> database = new HashMap<Integer, Passport>();
 
         addToDatabase(ivanFedorov, database);
         addToDatabase(sergeyIvanov, database);
+        addToDatabase(ivanPetrov, database);
         System.out.println(databaseSearch(3234, database));
         System.out.println(databaseSearch(32146, database));
         System.out.println(database);
